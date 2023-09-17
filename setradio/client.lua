@@ -117,6 +117,21 @@ addEventHandler("onServerVolumeChangeAccept", localPlayer, function(veh, newVolu
 	end
 end)
 
+local function destroyActualRadio()
+	if getElementType(source) == "vehicle" then
+		local x, y, z = getElementPosition(source)
+		local radioHere = getElementsWithinRange(x, y, z, 0.01, "sound")
+		for i=1, #radioHere do local element = radioHere[i]
+			if getElementData(element, syncKey) then
+				destroyElement(element)
+			end
+		end
+	end
+end
+addEventHandler("onClientElementDestroy", root, destroyActualRadio)
+addEventHandler("onClientVehicleExplode", root, destroyActualRadio)
+-- fixes problem with the radio continuing to play after the vehicle disappears/explodes
+
 local toBool = {
 	['mouse_wheel_up'] = true,
 	['mouse_wheel_down'] = false,
