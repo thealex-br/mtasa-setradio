@@ -1,4 +1,4 @@
-# 🔊 Radio System: A Simplified Version of Setradio 🔊
+# 🔊 Radio System: A Simplified Version of SetRadio 🔊
 
 ### 🎮 Capabilities and Advantages 🎮
 - 🌐 Synchronized music for all players
